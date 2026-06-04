@@ -1,0 +1,28 @@
+# Common
+node_modules/
+.DS_Store
+*.log
+.env
+.env.local
+.vscode/
+
+# Backend (Java/Maven)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/.idea/
+backend/*.iml
+backend/*.iws
+backend/*.ipr
+backend/.settings/
+backend/.project
+backend/.classpath
+backend/.factorypath
+backend/.sts4-cache/
+
+# Frontend (Next.js)
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.turbo/
+frontend/.vercel/
+frontend/*.tsbuildinfo
