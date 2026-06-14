@@ -10,4 +10,5 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, UUID> {
     Optional<Enrollment> findByOfferId(UUID offerId);
     List<Enrollment> findByApplicantParentEmail(String parentEmail);
     Optional<Enrollment> findByApplicantId(UUID applicantId);
+    List<Enrollment> findByOfferApplicationSchoolId(UUID schoolId);
 }

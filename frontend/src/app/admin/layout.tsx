@@ -127,13 +127,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="px-6 py-5 border-b border-gray-200 dark:border-gray-700">
-        <span className="text-xl font-bold text-blue-600 dark:text-blue-400">iga afriqa</span>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Admissions Platform</p>
+      <div className="px-6 py-5 border-b border-[#0D4A2F]/20 dark:border-green-900/30 bg-[#0D4A2F]">
+        <span className="font-display text-lg font-bold text-white leading-tight">Greenwood</span>
+        <p className="text-xs text-green-200/80 mt-0.5">Admissions Portal</p>
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
         {visibleItems.map(item => {
           const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
           return (
@@ -141,10 +141,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               key={item.href}
               href={item.href}
               onClick={() => setSidebarOpen(false)}
-              className={`flex items-center space-x-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center space-x-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                 isActive
-                  ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
-                  : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
+                  ? 'bg-[#0D4A2F] text-white shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:bg-[#0D4A2F]/8 dark:hover:bg-green-900/20 hover:text-[#0D4A2F] dark:hover:text-green-400'
               }`}
             >
               {item.icon}
@@ -157,7 +157,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* User info */}
       <div className="px-4 py-4 border-t border-gray-200 dark:border-gray-700">
         <div className="flex items-center space-x-3 mb-3">
-          <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 text-sm font-semibold">
+          <div className="w-8 h-8 bg-[#0D4A2F] rounded-full flex items-center justify-center text-white text-sm font-semibold">
             {userName ? userName[0].toUpperCase() : 'U'}
           </div>
           <div className="overflow-hidden">
@@ -176,9 +176,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   );
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900 overflow-hidden">
+    <div className="flex h-screen bg-[#F8F5EE] dark:bg-[#080f0a] overflow-hidden">
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex lg:flex-col w-60 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex-shrink-0">
+      <aside className="hidden lg:flex lg:flex-col w-60 bg-white dark:bg-gray-800 border-r border-gray-100 dark:border-gray-700 flex-shrink-0">
         <SidebarContent />
       </aside>
 
@@ -186,7 +186,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {sidebarOpen && (
         <div className="lg:hidden fixed inset-0 z-40 flex">
           <div className="fixed inset-0 bg-black/50" onClick={() => setSidebarOpen(false)} />
-          <aside className="relative flex flex-col w-60 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-50">
+          <aside className="relative flex flex-col w-60 bg-white dark:bg-gray-800 border-r border-gray-100 dark:border-gray-700 z-50">
             <SidebarContent />
           </aside>
         </div>
@@ -195,7 +195,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Main area */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top header */}
-        <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 h-14 flex items-center justify-between flex-shrink-0">
+        <header className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 px-4 h-14 flex items-center justify-between flex-shrink-0">
           <button
             onClick={() => setSidebarOpen(true)}
             className="lg:hidden p-1 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
@@ -206,7 +206,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </button>
           <div className="flex items-center space-x-3 ml-auto">
             <ThemeToggle />
-            <span className="hidden sm:inline text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-full font-medium">
+            <span className="hidden sm:inline text-xs bg-[#0D4A2F]/10 dark:bg-green-900/30 text-[#0D4A2F] dark:text-green-400 px-2 py-1 rounded-full font-medium">
               {roleLabel}
             </span>
           </div>

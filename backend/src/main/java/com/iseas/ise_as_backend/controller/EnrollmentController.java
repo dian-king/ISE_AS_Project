@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -104,6 +105,40 @@ public class EnrollmentController {
     public ResponseEntity<Enrollment> getByOffer(@PathVariable UUID offerId) {
         return ResponseEntity.ok(enrollmentRepository.findByOfferId(offerId)
                 .orElseThrow(() -> new RuntimeException("Enrollment not found for this offer")));
+    }
+
+    // ── Admin: list all enrollments for the school ─────────────────────────
+
+    @GetMapping
+    @Transactional(readOnly = true)
+    public ResponseEntity<List<Map<String, Object>>> listAll() {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User caller = userRepository.findByEmail(email).orElseThrow();
+
+        List<Enrollment> enrollments = (caller.getSchool() != null)
+                ? enrollmentRepository.findByOfferApplicationSchoolId(caller.getSchool().getId())
+                : enrollmentRepository.findAll();
+
+        List<Map<String, Object>> result = enrollments.stream().map(e -> {
+            Map<String, Object> row = new LinkedHashMap<>();
+            row.put("id", e.getId());
+            row.put("status", e.getStatus().name());
+            row.put("enrollmentDate", e.getEnrollmentDate() != null ? e.getEnrollmentDate().toString() : null);
+            Applicant a = e.getApplicant();
+            if (a != null) {
+                row.put("studentName", a.getFirstName() + " " + a.getLastName());
+                // include student number if a student record exists
+                studentRepository.findByApplicantId(a.getId()).ifPresent(s -> {
+                    row.put("studentNumber", s.getStudentNumber());
+                });
+            }
+            if (e.getOffer() != null && e.getOffer().getApplication() != null) {
+                row.put("grade", e.getOffer().getApplication().getGradeApplyingFor());
+            }
+            return row;
+        }).toList();
+
+        return ResponseEntity.ok(result);
     }
 
     // ── Submit enrollment form (parent) ────────────────────────────────────
