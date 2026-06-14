@@ -3,8 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "ISE&AS - International School Admissions & Enrollment System",
-  description: "White-label admissions platform for international schools",
+  title: "Greenwood International School — Admissions Portal",
+  description: "Apply for admission to Greenwood International School, Kigali. A Cambridge-accredited education from Early Years through A-Level.",
 };
 
 export default function RootLayout({

@@ -7,6 +7,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -44,9 +46,34 @@ public class User implements UserDetails {
     @Builder.Default
     private boolean enabled = true;
 
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private UserStatus status = UserStatus.ACTIVE;
+
+    // Email verification
+    @Builder.Default
+    private boolean emailVerified = false;
+    private String emailVerificationToken;
+
+    // Password reset
+    private String passwordResetToken;
+    private LocalDateTime passwordResetTokenExpiresAt;
+
+    // Account lockout (NFR-019: lock after 5 failed attempts)
+    @Builder.Default
+    private int failedLoginAttempts = 0;
+    private LocalDateTime lockedUntil;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        // Spring Security role (ROLE_ prefix for hasRole() checks)
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + role.name()));
+        // Permission-level authorities (for hasAuthority() checks in @PreAuthorize)
+        for (Permission p : RolePermissions.forRole(role)) {
+            authorities.add(new SimpleGrantedAuthority(p.name()));
+        }
+        return authorities;
     }
 
     @Override
@@ -61,7 +88,8 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        if (lockedUntil == null) return true;
+        return LocalDateTime.now().isAfter(lockedUntil);
     }
 
     @Override
@@ -71,6 +99,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return enabled && (status == null || status == UserStatus.ACTIVE);
     }
 }

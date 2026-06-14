@@ -1,6 +1,8 @@
 package com.iseas.ise_as_backend.controller;
 
 import com.iseas.ise_as_backend.dto.ApplicationSubmissionRequest;
+import com.iseas.ise_as_backend.dto.ApplicationTimelineResponse;
+import com.iseas.ise_as_backend.dto.ApplicationUpdateRequest;
 import com.iseas.ise_as_backend.dto.DashboardStats;
 import com.iseas.ise_as_backend.dto.DetailedApplicationResponse;
 import com.iseas.ise_as_backend.model.Application;
@@ -35,6 +37,18 @@ public class ApplicationController {
         return ResponseEntity.ok(applicationService.getApplicationById(id));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Application> updateApplication(
+            @PathVariable UUID id,
+            @RequestBody ApplicationUpdateRequest request) {
+        return ResponseEntity.ok(applicationService.updateApplication(id, request));
+    }
+
+    @PostMapping("/{id}/submit")
+    public ResponseEntity<Application> submitDraft(@PathVariable UUID id) {
+        return ResponseEntity.ok(applicationService.submitDraft(id));
+    }
+
     @PutMapping("/{id}/status")
     public ResponseEntity<Void> updateStatus(
             @PathVariable UUID id,
@@ -47,5 +61,10 @@ public class ApplicationController {
     @GetMapping("/stats")
     public ResponseEntity<DashboardStats> getStats() {
         return ResponseEntity.ok(applicationService.getStats());
+    }
+
+    @GetMapping("/{id}/timeline")
+    public ResponseEntity<List<ApplicationTimelineResponse>> getTimeline(@PathVariable UUID id) {
+        return ResponseEntity.ok(applicationService.getTimeline(id));
     }
 }

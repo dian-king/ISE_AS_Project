@@ -23,12 +23,19 @@ public class School {
     private String domain;
 
     private String logoUrl;
+    private String faviconUrl;
     private String primaryColor;
     private String secondaryColor;
-    
+    private String fontFamily;
+
+    private String tagline;
+    private String website;
     private String address;
     private String contactEmail;
     private String contactPhone;
+
+    @Column(columnDefinition = "TEXT")
+    private String emailSignature;
 
     @Builder.Default
     private boolean active = true;

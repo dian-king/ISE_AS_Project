@@ -1,0 +1,13 @@
+package com.iseas.ise_as_backend.model;
+
+public enum NotificationEventType {
+    APPLICATION_SUBMITTED,
+    DOCUMENT_UPLOADED,
+    DOCUMENT_REJECTED,
+    REVIEW_ASSIGNED,
+    INTERVIEW_SCHEDULED,
+    DECISION_RELEASED,
+    OFFER_ISSUED,
+    ENROLLMENT_STARTED,
+    ENROLLMENT_CONFIRMED
+}

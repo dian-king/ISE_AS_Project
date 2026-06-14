@@ -23,6 +23,7 @@ export default function ApplyPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [stepErrors, setStepErrors] = useState<string[]>([]);
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -105,8 +106,7 @@ export default function ApplyPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    
-    // Handle dependent address resets
+    setStepErrors([]);
     if (name === 'province') {
       setFormData({ ...formData, province: value, district: '', sector: '', cell: '', village: '' });
     } else if (name === 'district') {
@@ -120,8 +120,55 @@ export default function ApplyPage() {
     }
   };
 
-  const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
-  const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
+  const validateStep = (step: number): string[] => {
+    const errs: string[] = [];
+    switch (step) {
+      case 0:
+        if (!formData.firstName.trim())  errs.push('First name is required');
+        if (!formData.lastName.trim())   errs.push('Last name is required');
+        if (!formData.dob)               errs.push('Date of birth is required');
+        if (!formData.gender)            errs.push('Gender is required');
+        if (!formData.programId)         errs.push('Please select a grade to apply for');
+        if (isSeniorStudent && !formData.combination) errs.push('Academic combination is required for Senior 4–6');
+        break;
+      case 1:
+        if (!formData.parentName.trim())  errs.push('Parent/Guardian full name is required');
+        if (!formData.parentEmail.trim()) errs.push('Parent/Guardian email is required');
+        if (!formData.parentPhone.trim()) errs.push('Phone number is required');
+        if (!formData.nationalId.trim())  errs.push('National ID number is required');
+        if (!formData.province)  errs.push('Province is required');
+        if (!formData.district)  errs.push('District is required');
+        if (!formData.sector)    errs.push('Sector is required');
+        if (!formData.cell)      errs.push('Cell is required');
+        if (!formData.village)   errs.push('Village is required');
+        break;
+      case 2:
+        if (!formData.previousSchool.trim())      errs.push('Previous school name is required');
+        if (!formData.lastGradeCompleted.trim())  errs.push('Last grade completed is required');
+        if (isP6orS3 && !formData.nationalExamIndexNumber.trim()) errs.push('National exam index number is required');
+        break;
+      case 3:
+        if (!files.birthCertificate) errs.push('Birth certificate is required');
+        if (!files.reportCard)       errs.push('Previous report card is required');
+        break;
+    }
+    return errs;
+  };
+
+  const nextStep = () => {
+    const errs = validateStep(currentStep);
+    if (errs.length > 0) {
+      setStepErrors(errs);
+      return;
+    }
+    setStepErrors([]);
+    setCurrentStep((prev) => Math.min(prev + 1, STEPS.length - 1));
+  };
+
+  const prevStep = () => {
+    setStepErrors([]);
+    setCurrentStep((prev) => Math.max(prev - 1, 0));
+  };
 
   const [files, setFiles] = useState<{ [key: string]: File | null }>({
     birthCertificate: null,
@@ -130,6 +177,7 @@ export default function ApplyPage() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: string) => {
     if (e.target.files && e.target.files[0]) {
+      setStepErrors([]);
       setFiles({ ...files, [type]: e.target.files[0] });
     }
   };
@@ -550,10 +598,31 @@ export default function ApplyPage() {
           {error && <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg">{error}</div>}
           {renderStep()}
 
-          <div className="mt-12 flex justify-between">
-            <Button 
-              variant="secondary" 
-              onClick={prevStep} 
+          {stepErrors.length > 0 && (
+            <div className="mt-8 rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20 px-5 py-4">
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="text-sm font-semibold text-red-700 dark:text-red-400 mb-1.5">Please complete the following before continuing:</p>
+                  <ul className="space-y-1">
+                    {stepErrors.map((err) => (
+                      <li key={err} className="text-sm text-red-600 dark:text-red-400 flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-red-500 shrink-0" />
+                        {err}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="mt-6 flex justify-between">
+            <Button
+              variant="secondary"
+              onClick={prevStep}
               disabled={currentStep === 0 || isSubmitting}
               className={currentStep === 0 ? 'invisible' : ''}
             >

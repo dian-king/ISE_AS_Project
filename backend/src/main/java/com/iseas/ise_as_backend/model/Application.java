@@ -30,6 +30,7 @@ public class Application {
 
     private String gradeApplyingFor;
     private String academicYear;
+    private String applicationNumber;
 
     @Enumerated(EnumType.STRING)
     @Builder.Default

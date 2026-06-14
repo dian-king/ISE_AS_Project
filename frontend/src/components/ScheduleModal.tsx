@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { Input } from './Input';
+import { API_BASE_URL } from '../lib/api';
 
 interface ScheduleModalProps {
   applicationId: string;
@@ -21,7 +22,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ applicationId, app
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await fetch('http://localhost:8080/api/v1/interviews/schedule', {
+      const response = await fetch(`${API_BASE_URL}/interviews/schedule`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

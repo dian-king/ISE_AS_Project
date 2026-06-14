@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.HexFormat;
 import java.util.UUID;
 
 @Service
@@ -23,29 +25,45 @@ public class FileStorageService {
         }
     }
 
-    public String store(MultipartFile file) {
+    public record StorageResult(String filename, String checksum, long fileSize) {}
+
+    public StorageResult storeWithMetadata(MultipartFile file) {
+        if (file.isEmpty()) {
+            throw new RuntimeException("Failed to store empty file.");
+        }
         try {
-            if (file.isEmpty()) {
-                throw new RuntimeException("Failed to store empty file.");
-            }
-            String filename = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
-            Path destinationFile = this.rootLocation.resolve(Paths.get(filename)).normalize().toAbsolutePath();
-            
-            if (!destinationFile.getParent().equals(this.rootLocation.toAbsolutePath())) {
-                // This is a security check
+            byte[] bytes = file.getBytes();
+
+            String filename = UUID.randomUUID() + "_" + file.getOriginalFilename();
+            Path destination = rootLocation.resolve(Paths.get(filename)).normalize().toAbsolutePath();
+            if (!destination.getParent().equals(rootLocation.toAbsolutePath())) {
                 throw new RuntimeException("Cannot store file outside current directory.");
             }
-            
-            try (var inputStream = file.getInputStream()) {
-                Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
-            }
-            return filename;
+            Files.write(destination, bytes);
+
+            String checksum = sha256Hex(bytes);
+            return new StorageResult(filename, checksum, bytes.length);
         } catch (IOException e) {
             throw new RuntimeException("Failed to store file.", e);
         }
     }
 
+    /** Kept for backward-compatibility with any existing callers. */
+    public String store(MultipartFile file) {
+        return storeWithMetadata(file).filename();
+    }
+
     public Path load(String filename) {
         return rootLocation.resolve(filename);
+    }
+
+    private String sha256Hex(byte[] data) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(data);
+            return HexFormat.of().formatHex(hash);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-256 not available", e);
+        }
     }
 }

@@ -29,4 +29,7 @@ public class Program {
 
     @Builder.Default
     private boolean active = true;
+
+    @Builder.Default
+    private Integer capacity = 0;
 }
