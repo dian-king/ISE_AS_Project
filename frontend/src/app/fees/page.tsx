@@ -59,11 +59,13 @@ export default function FeesPage() {
   const [view, setView] = useState<'annual' | 'termly'>('annual');
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <div className="min-h-screen bg-[#F8F5EE] dark:bg-[#080f0a] transition-colors">
       {/* Nav */}
-      <nav className="bg-blue-900 text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20">
-        <Link href="/" className="font-extrabold text-lg tracking-tight hover:text-blue-200 transition-colors">iga afriqa</Link>
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-blue-200">
+      <nav className="bg-[#0D4A2F] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-md">
+        <Link href="/" className="font-display font-bold text-lg tracking-tight hover:text-green-200 transition-colors">
+          Greenwood
+        </Link>
+        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-green-200">
           <Link href="/programs" className="hover:text-white transition-colors">Programmes</Link>
           <Link href="/fees" className="text-white font-semibold">Tuition & Fees</Link>
           <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
@@ -71,16 +73,21 @@ export default function FeesPage() {
         </div>
         <div className="flex items-center space-x-3">
           <ThemeToggle />
-          <Link href="/login" className="text-sm font-semibold bg-white text-blue-900 px-4 py-1.5 rounded-lg hover:bg-blue-50 transition-colors">
+          <Link href="/login" className="text-sm font-semibold bg-[#C9A227] text-[#082D1D] px-4 py-1.5 rounded-lg hover:bg-[#E8C85A] transition-colors">
             Sign In
           </Link>
         </div>
       </nav>
 
       {/* Hero */}
-      <div className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 px-4 text-center">
-        <h1 className="text-4xl font-extrabold mb-3">Tuition & Fees</h1>
-        <p className="text-blue-200 max-w-2xl mx-auto text-lg">
+      <div className="bg-[#0D4A2F] text-white py-16 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none select-none" aria-hidden>
+          <div className="absolute -top-16 -left-16 w-72 h-72 rounded-full border-4 border-white" />
+          <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full border-4 border-white" />
+        </div>
+        <p className="text-[#C9A227] font-semibold text-sm uppercase tracking-widest mb-2">Greenwood International School</p>
+        <h1 className="font-display text-4xl font-bold mb-3">Tuition & Fees</h1>
+        <p className="text-green-200 max-w-2xl mx-auto text-base">
           Transparent, all-inclusive fee structures for the {new Date().getFullYear()}/{new Date().getFullYear() + 1} academic year.
           All fees are quoted in Rwandan Francs (RWF).
         </p>
@@ -89,16 +96,16 @@ export default function FeesPage() {
       <div className="max-w-5xl mx-auto py-12 px-4">
         {/* Toggle */}
         <div className="flex justify-center mb-8">
-          <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-1 inline-flex">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-1 inline-flex shadow-sm border border-gray-100 dark:border-gray-700">
             <button
               onClick={() => setView('annual')}
-              className={`px-5 py-2 rounded-md text-sm font-medium transition-colors ${view === 'annual' ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm' : 'text-gray-500 dark:text-gray-400'}`}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'annual' ? 'bg-[#0D4A2F] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Annual Fees
             </button>
             <button
               onClick={() => setView('termly')}
-              className={`px-5 py-2 rounded-md text-sm font-medium transition-colors ${view === 'termly' ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm' : 'text-gray-500 dark:text-gray-400'}`}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'termly' ? 'bg-[#0D4A2F] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Per Term
             </button>
@@ -106,26 +113,28 @@ export default function FeesPage() {
         </div>
 
         {/* Main Fee Table */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border dark:border-gray-700 overflow-hidden mb-8">
-          <div className="px-6 py-4 border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-900/30">
-            <h2 className="font-bold text-gray-900 dark:text-white">School Fee Schedule — {new Date().getFullYear()}/{new Date().getFullYear() + 1}</h2>
+        <div className="bg-white dark:bg-gray-800/60 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden mb-6">
+          <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 bg-[#F8F5EE] dark:bg-gray-900/40">
+            <h2 className="font-display font-bold text-gray-900 dark:text-white">
+              School Fee Schedule — {new Date().getFullYear()}/{new Date().getFullYear() + 1}
+            </h2>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">The school year comprises three terms of approximately 13 weeks each.</p>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full">
-              <thead className="bg-gray-50 dark:bg-gray-900/30 text-xs text-gray-500 dark:text-gray-400 uppercase">
+              <thead className="bg-[#F8F5EE] dark:bg-gray-900/40 text-xs text-gray-500 dark:text-gray-400 uppercase">
                 <tr>
-                  <th className="px-6 py-3 text-left font-bold">Programme Level</th>
-                  <th className="px-6 py-3 text-right font-bold">Tuition ({view === 'annual' ? 'Annual' : 'Per Term'})</th>
-                  <th className="px-6 py-3 text-right font-bold">Registration Fee</th>
-                  <th className="px-6 py-3 text-left font-bold">Includes</th>
+                  <th className="px-6 py-3 text-left font-semibold tracking-wide">Programme Level</th>
+                  <th className="px-6 py-3 text-right font-semibold tracking-wide">Tuition ({view === 'annual' ? 'Annual' : 'Per Term'})</th>
+                  <th className="px-6 py-3 text-right font-semibold tracking-wide">Registration Fee</th>
+                  <th className="px-6 py-3 text-left font-semibold tracking-wide">Includes</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                {FEE_SCHEDULE.map((row, i) => (
-                  <tr key={row.level} className={i % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-900/20'}>
+              <tbody className="divide-y divide-gray-50 dark:divide-gray-700/50">
+                {FEE_SCHEDULE.map((row) => (
+                  <tr key={row.level} className="hover:bg-[#F8F5EE]/60 dark:hover:bg-gray-700/20 transition-colors">
                     <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">{row.level}</td>
-                    <td className="px-6 py-4 text-sm text-right font-bold text-blue-700 dark:text-blue-400">
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#0D4A2F] dark:text-green-400">
                       {rwf(view === 'annual' ? row.annual : row.termly)}
                     </td>
                     <td className="px-6 py-4 text-sm text-right text-gray-700 dark:text-gray-300">{rwf(row.registration)}</td>
@@ -138,22 +147,22 @@ export default function FeesPage() {
         </div>
 
         {/* Additional / Optional Fees */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border dark:border-gray-700 overflow-hidden mb-8">
-          <div className="px-6 py-4 border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-900/30">
-            <h2 className="font-bold text-gray-900 dark:text-white">Additional & Optional Fees</h2>
+        <div className="bg-white dark:bg-gray-800/60 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden mb-6">
+          <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 bg-[#F8F5EE] dark:bg-gray-900/40">
+            <h2 className="font-display font-bold text-gray-900 dark:text-white">Additional & Optional Fees</h2>
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full">
-              <thead className="bg-gray-50 dark:bg-gray-900/30 text-xs text-gray-500 dark:text-gray-400 uppercase">
+              <thead className="bg-[#F8F5EE] dark:bg-gray-900/40 text-xs text-gray-500 dark:text-gray-400 uppercase">
                 <tr>
-                  <th className="px-6 py-3 text-left font-bold">Item</th>
-                  <th className="px-6 py-3 text-right font-bold">Amount (RWF)</th>
-                  <th className="px-6 py-3 text-left font-bold">Notes</th>
+                  <th className="px-6 py-3 text-left font-semibold tracking-wide">Item</th>
+                  <th className="px-6 py-3 text-right font-semibold tracking-wide">Amount (RWF)</th>
+                  <th className="px-6 py-3 text-left font-semibold tracking-wide">Notes</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                {ADDITIONAL_FEES.map((row, i) => (
-                  <tr key={row.item} className={i % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-900/20'}>
+              <tbody className="divide-y divide-gray-50 dark:divide-gray-700/50">
+                {ADDITIONAL_FEES.map((row) => (
+                  <tr key={row.item} className="hover:bg-[#F8F5EE]/60 dark:hover:bg-gray-700/20 transition-colors">
                     <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">{row.item}</td>
                     <td className="px-6 py-4 text-sm text-right text-gray-700 dark:text-gray-300">{rwf(row.amount)}</td>
                     <td className="px-6 py-4 text-xs text-gray-500 dark:text-gray-400">{row.notes}</td>
@@ -165,30 +174,46 @@ export default function FeesPage() {
         </div>
 
         {/* Payment Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white dark:bg-gray-800 rounded-xl border dark:border-gray-700 p-6">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-3">Payment Schedule</h3>
-            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 mr-2 shrink-0" />Term 1 fees due: 2 weeks before term start (mid-January)</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 mr-2 shrink-0" />Term 2 fees due: last week of Term 1 (late April)</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 mr-2 shrink-0" />Term 3 fees due: last week of Term 2 (late August)</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 mr-2 shrink-0" />Annual payment (paid by Term 1 due date) receives a 3% discount</li>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 shadow-sm">
+            <h3 className="font-display font-bold text-gray-900 dark:text-white mb-3">Payment Schedule</h3>
+            <ul className="space-y-2.5 text-sm text-gray-600 dark:text-gray-300">
+              {[
+                'Term 1 fees due: 2 weeks before term start (mid-January)',
+                'Term 2 fees due: last week of Term 1 (late April)',
+                'Term 3 fees due: last week of Term 2 (late August)',
+                'Annual payment (paid by Term 1 due date) receives a 3% discount',
+              ].map(item => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0D4A2F] mt-1.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl border dark:border-gray-700 p-6">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-3">Accepted Payment Methods</h3>
-            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-yellow-500 mt-1.5 mr-2 shrink-0" />MTN Mobile Money (MoMo)</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-red-500 mt-1.5 mr-2 shrink-0" />Airtel Money</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-green-500 mt-1.5 mr-2 shrink-0" />Bank Transfer (RWF — BK, Equity, I&M, Cogebanque)</li>
-              <li className="flex items-start"><span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 mr-2 shrink-0" />Visa / Mastercard debit or credit card</li>
+          <div className="bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 shadow-sm">
+            <h3 className="font-display font-bold text-gray-900 dark:text-white mb-3">Accepted Payment Methods</h3>
+            <ul className="space-y-2.5 text-sm text-gray-600 dark:text-gray-300">
+              {[
+                { dot: 'bg-yellow-500', text: 'MTN Mobile Money (MoMo)' },
+                { dot: 'bg-red-500',    text: 'Airtel Money' },
+                { dot: 'bg-[#0D4A2F]', text: 'Bank Transfer (RWF — BK, Equity, I&M, Cogebanque)' },
+                { dot: 'bg-[#C9A227]', text: 'Visa / Mastercard debit or credit card' },
+              ].map(({ dot, text }) => (
+                <li key={text} className="flex items-start gap-2">
+                  <span className={`w-1.5 h-1.5 rounded-full ${dot} mt-1.5 shrink-0`} />
+                  {text}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl p-5 text-sm text-amber-800 dark:text-amber-300">
-          <strong>Financial Aid & Scholarships:</strong> Limited merit-based scholarships and need-based bursaries are available for qualifying applicants. Please contact the Admissions Office at{' '}
-          <Link href="/contact" className="underline hover:text-amber-900 dark:hover:text-amber-200">admissions@iseas.com</Link> for details.
+        {/* Scholarships Banner */}
+        <div className="bg-[#0D4A2F]/8 dark:bg-green-900/20 border border-[#0D4A2F]/20 dark:border-green-800 rounded-2xl p-5 text-sm text-[#0D4A2F] dark:text-green-300">
+          <strong className="font-semibold">Financial Aid & Scholarships:</strong>{' '}
+          Limited merit-based scholarships and need-based bursaries are available for qualifying applicants. Please contact the Admissions Office at{' '}
+          <Link href="/contact" className="underline hover:text-[#082D1D] dark:hover:text-green-200">admissions@greenwood.rw</Link> for details.
         </div>
       </div>
     </div>
