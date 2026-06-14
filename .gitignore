@@ -7,6 +7,7 @@ node_modules/
 .vscode/
 
 # Backend (Java/Maven)
+backend/uploads/
 backend/target/
 backend/.mvn/wrapper/maven-wrapper.jar
 backend/.idea/

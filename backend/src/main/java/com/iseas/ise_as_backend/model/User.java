@@ -20,6 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -52,6 +53,7 @@ public class User implements UserDetails {
 
     // Email verification
     @Builder.Default
+    @Column(name = "email_verified", columnDefinition = "boolean default false")
     private boolean emailVerified = false;
     private String emailVerificationToken;
 
@@ -61,6 +63,7 @@ public class User implements UserDetails {
 
     // Account lockout (NFR-019: lock after 5 failed attempts)
     @Builder.Default
+    @Column(name = "failed_login_attempts", columnDefinition = "integer default 0")
     private int failedLoginAttempts = 0;
     private LocalDateTime lockedUntil;
 

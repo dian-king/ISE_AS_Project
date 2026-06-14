@@ -1,5 +1,6 @@
 package com.iseas.ise_as_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

@@ -23,7 +23,7 @@ public class AuditLog {
     private UUID id;
 
     // Who performed the action
-    @Column(name = "actor_email", nullable = false)
+    @Column(name = "actor_email", nullable = false, columnDefinition = "varchar(255) default 'system'")
     private String actorEmail;
 
     @Column(name = "actor_role")
