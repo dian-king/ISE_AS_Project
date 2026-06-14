@@ -199,6 +199,7 @@ public class ApplicationService {
         return applicationRepository.save(application);
     }
 
+    @Transactional(readOnly = true)
     public List<DetailedApplicationResponse> getAllApplications() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(email)
@@ -215,6 +216,7 @@ public class ApplicationService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public DashboardStats getStats() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(email)
@@ -274,6 +276,7 @@ public class ApplicationService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public DetailedApplicationResponse getApplicationById(UUID id) {
         Application app = applicationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Application not found"));
