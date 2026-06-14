@@ -107,7 +107,7 @@ export default function NotificationsPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <Link href="/admin/dashboard" className="text-[#0D4A2F] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
+          <Link href="/admin/dashboard" className="text-[#E8731A] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -140,7 +140,7 @@ export default function NotificationsPage() {
               onClick={() => { setTab(t); setSearch(''); }}
               className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors capitalize ${
                 tab === t
-                  ? 'bg-[#0D4A2F] text-white shadow-sm'
+                  ? 'bg-[#E8731A] text-white shadow-sm'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
               }`}
             >
@@ -166,8 +166,8 @@ export default function NotificationsPage() {
         ) : tab === 'history' ? (
           filteredNotifs.length === 0 ? (
             <div className="text-center py-24 bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-100 dark:border-gray-700">
-              <div className="w-16 h-16 rounded-full bg-[#0D4A2F]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full bg-[#E8731A]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
               </div>

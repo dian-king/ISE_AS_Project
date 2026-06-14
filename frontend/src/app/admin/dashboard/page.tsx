@@ -24,7 +24,7 @@ const STATUS_BADGE: Record<string, string> = {
 };
 
 const STATS_CONFIG = [
-  { key: 'totalApplications',   label: 'Total Applications', icon: '📋', border: 'border-l-[#0D4A2F]',  text: 'text-[#0D4A2F] dark:text-green-400' },
+  { key: 'totalApplications',   label: 'Total Applications', icon: '📋', border: 'border-l-[#E8731A]',  text: 'text-[#E8731A] dark:text-green-400' },
   { key: 'pendingApplications', label: 'Pending Review',     icon: '⏳', border: 'border-l-amber-500',  text: 'text-amber-600 dark:text-amber-400' },
   { key: 'acceptedApplications',label: 'Accepted',           icon: '✅', border: 'border-l-emerald-500', text: 'text-emerald-600 dark:text-emerald-400' },
   { key: 'rejectedApplications',label: 'Not Accepted',       icon: '❌', border: 'border-l-red-500',     text: 'text-red-600 dark:text-red-400' },
@@ -95,7 +95,7 @@ export default function AdminDashboard() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
             <h1 className="font-display text-3xl font-bold text-gray-900 dark:text-white">Admissions Dashboard</h1>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Greenwood International School · {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Excella International School · {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
           </div>
           <div className="flex items-center gap-3">
             <ThemeToggle />
@@ -171,10 +171,10 @@ export default function AdminDashboard() {
                   applications.map((app) => {
                     const badgeClass = STATUS_BADGE[app.status] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
                     return (
-                      <tr key={app.id} className="hover:bg-[#0D4A2F]/[0.03] dark:hover:bg-white/[0.03] transition-colors">
+                      <tr key={app.id} className="hover:bg-[#E8731A]/[0.03] dark:hover:bg-white/[0.03] transition-colors">
                         <td className="px-5 py-4 whitespace-nowrap">
                           <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-[#0D4A2F]/10 flex items-center justify-center text-[#0D4A2F] dark:text-green-400 text-xs font-bold shrink-0">
+                            <div className="w-8 h-8 rounded-full bg-[#E8731A]/10 flex items-center justify-center text-[#E8731A] dark:text-green-400 text-xs font-bold shrink-0">
                               {(app.applicantFirstName?.[0] ?? '?').toUpperCase()}
                             </div>
                             <div>
@@ -209,7 +209,7 @@ export default function AdminDashboard() {
                             <select
                               value={app.status}
                               onChange={e => handleStatusChange(app.id, e.target.value)}
-                              className="text-xs border border-gray-200 dark:border-gray-600 rounded-lg px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-[#0D4A2F]"
+                              className="text-xs border border-gray-200 dark:border-gray-600 rounded-lg px-2 py-1.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-[#E8731A]"
                             >
                               {STATUS_OPTIONS.map(opt => (
                                 <option key={opt} value={opt}>{opt.replace(/_/g, ' ')}</option>

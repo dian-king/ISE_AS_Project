@@ -17,28 +17,28 @@ const FEE_SCHEDULE = [
     annual: 2550000,
     termly: 850000,
     registration: 150000,
-    notes: 'Includes all textbooks and Cambridge Primary Checkpoint examination fees.',
+    notes: 'Includes all textbooks and national curriculum assessment fees.',
   },
   {
-    level: 'Lower Secondary (Senior 1 – Senior 3)',
+    level: 'Junior Secondary (Senior 1 – Senior 3)',
     annual: 3000000,
     termly: 1000000,
     registration: 200000,
-    notes: 'Includes Cambridge Lower Secondary Checkpoint assessment fees.',
+    notes: 'Includes national curriculum assessment and Montessori enrichment programme fees.',
   },
   {
-    level: 'IGCSE (Senior 4 – Senior 5)',
+    level: 'Senior Secondary I (Senior 4 – Senior 5)',
     annual: 3600000,
     termly: 1200000,
     registration: 200000,
-    notes: 'Includes Cambridge IGCSE examination registration fees.',
+    notes: 'Includes national O-Level examination registration fees.',
   },
   {
-    level: 'Advanced Level (Senior 5 – Senior 6)',
+    level: 'Senior Secondary II (Senior 5 – Senior 6)',
     annual: 4200000,
     termly: 1400000,
     registration: 200000,
-    notes: 'Includes Cambridge A-Level examination registration fees and university application guidance.',
+    notes: 'Includes national A-Level examination registration fees and university application guidance.',
   },
 ];
 
@@ -61,11 +61,11 @@ export default function FeesPage() {
   return (
     <div className="min-h-screen bg-[#F8F5EE] dark:bg-[#080f0a] transition-colors">
       {/* Nav */}
-      <nav className="bg-[#0D4A2F] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-md">
-        <Link href="/" className="font-display font-bold text-lg tracking-tight hover:text-green-200 transition-colors">
-          Greenwood
+      <nav className="bg-[#E8731A] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-md">
+        <Link href="/" className="font-display font-bold text-lg tracking-tight hover:text-orange-200 transition-colors">
+          Excella
         </Link>
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-green-200">
+        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-orange-200">
           <Link href="/programs" className="hover:text-white transition-colors">Programmes</Link>
           <Link href="/fees" className="text-white font-semibold">Tuition & Fees</Link>
           <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
@@ -73,21 +73,21 @@ export default function FeesPage() {
         </div>
         <div className="flex items-center space-x-3">
           <ThemeToggle />
-          <Link href="/login" className="text-sm font-semibold bg-[#C9A227] text-[#082D1D] px-4 py-1.5 rounded-lg hover:bg-[#E8C85A] transition-colors">
+          <Link href="/login" className="text-sm font-semibold bg-[#4DB8E8] text-[#1A1A1A] px-4 py-1.5 rounded-lg hover:bg-[#7DCEF4] transition-colors">
             Sign In
           </Link>
         </div>
       </nav>
 
       {/* Hero */}
-      <div className="bg-[#0D4A2F] text-white py-16 px-4 text-center relative overflow-hidden">
+      <div className="bg-[#E8731A] text-white py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none select-none" aria-hidden>
           <div className="absolute -top-16 -left-16 w-72 h-72 rounded-full border-4 border-white" />
           <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full border-4 border-white" />
         </div>
-        <p className="text-[#C9A227] font-semibold text-sm uppercase tracking-widest mb-2">Greenwood International School</p>
+        <p className="text-[#4DB8E8] font-semibold text-sm uppercase tracking-widest mb-2">Excella International School</p>
         <h1 className="font-display text-4xl font-bold mb-3">Tuition & Fees</h1>
-        <p className="text-green-200 max-w-2xl mx-auto text-base">
+        <p className="text-orange-200 max-w-2xl mx-auto text-base">
           Transparent, all-inclusive fee structures for the {new Date().getFullYear()}/{new Date().getFullYear() + 1} academic year.
           All fees are quoted in Rwandan Francs (RWF).
         </p>
@@ -99,13 +99,13 @@ export default function FeesPage() {
           <div className="bg-white dark:bg-gray-800 rounded-xl p-1 inline-flex shadow-sm border border-gray-100 dark:border-gray-700">
             <button
               onClick={() => setView('annual')}
-              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'annual' ? 'bg-[#0D4A2F] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'annual' ? 'bg-[#E8731A] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Annual Fees
             </button>
             <button
               onClick={() => setView('termly')}
-              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'termly' ? 'bg-[#0D4A2F] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+              className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${view === 'termly' ? 'bg-[#E8731A] text-white shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
             >
               Per Term
             </button>
@@ -134,7 +134,7 @@ export default function FeesPage() {
                 {FEE_SCHEDULE.map((row) => (
                   <tr key={row.level} className="hover:bg-[#F8F5EE]/60 dark:hover:bg-gray-700/20 transition-colors">
                     <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">{row.level}</td>
-                    <td className="px-6 py-4 text-sm text-right font-bold text-[#0D4A2F] dark:text-green-400">
+                    <td className="px-6 py-4 text-sm text-right font-bold text-[#E8731A] dark:text-green-400">
                       {rwf(view === 'annual' ? row.annual : row.termly)}
                     </td>
                     <td className="px-6 py-4 text-sm text-right text-gray-700 dark:text-gray-300">{rwf(row.registration)}</td>
@@ -185,7 +185,7 @@ export default function FeesPage() {
                 'Annual payment (paid by Term 1 due date) receives a 3% discount',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#0D4A2F] mt-1.5 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E8731A] mt-1.5 shrink-0" />
                   {item}
                 </li>
               ))}
@@ -197,8 +197,8 @@ export default function FeesPage() {
               {[
                 { dot: 'bg-yellow-500', text: 'MTN Mobile Money (MoMo)' },
                 { dot: 'bg-red-500',    text: 'Airtel Money' },
-                { dot: 'bg-[#0D4A2F]', text: 'Bank Transfer (RWF — BK, Equity, I&M, Cogebanque)' },
-                { dot: 'bg-[#C9A227]', text: 'Visa / Mastercard debit or credit card' },
+                { dot: 'bg-[#E8731A]', text: 'Bank Transfer (RWF — BK, Equity, I&M, Cogebanque)' },
+                { dot: 'bg-[#4DB8E8]', text: 'Visa / Mastercard debit or credit card' },
               ].map(({ dot, text }) => (
                 <li key={text} className="flex items-start gap-2">
                   <span className={`w-1.5 h-1.5 rounded-full ${dot} mt-1.5 shrink-0`} />
@@ -210,10 +210,10 @@ export default function FeesPage() {
         </div>
 
         {/* Scholarships Banner */}
-        <div className="bg-[#0D4A2F]/8 dark:bg-green-900/20 border border-[#0D4A2F]/20 dark:border-green-800 rounded-2xl p-5 text-sm text-[#0D4A2F] dark:text-green-300">
+        <div className="bg-[#E8731A]/8 dark:bg-green-900/20 border border-[#E8731A]/20 dark:border-green-800 rounded-2xl p-5 text-sm text-[#E8731A] dark:text-green-300">
           <strong className="font-semibold">Financial Aid & Scholarships:</strong>{' '}
           Limited merit-based scholarships and need-based bursaries are available for qualifying applicants. Please contact the Admissions Office at{' '}
-          <Link href="/contact" className="underline hover:text-[#082D1D] dark:hover:text-green-200">admissions@greenwood.rw</Link> for details.
+          <Link href="/contact" className="underline hover:text-[#1A1A1A] dark:hover:text-orange-200">info@excellaschool.rw</Link> for details.
         </div>
       </div>
     </div>

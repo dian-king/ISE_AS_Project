@@ -50,14 +50,14 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[#F8F5EE] dark:bg-[#080f0a] transition-colors">
 
       {/* Top Nav */}
-      <nav className="bg-[#0D4A2F] shadow-lg">
+      <nav className="bg-[#E8731A] shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-[68px]">
             <Link href="/" className="flex items-center gap-3">
               <SchoolCrest className="h-10 w-9" />
               <div className="hidden sm:block leading-tight">
-                <div className="text-white font-bold text-sm tracking-wider uppercase">Greenwood</div>
-                <div className="text-[#C9A227] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
+                <div className="text-white font-bold text-sm tracking-wider uppercase">Excella</div>
+                <div className="text-[#4DB8E8] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
               </div>
             </Link>
             <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ export default function DashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h1 className="font-display text-2xl font-bold text-gray-900 dark:text-white">My Applications</h1>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Track your admissions journey to Greenwood International School.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Track your admissions journey to Excella International School.</p>
             </div>
             <Button onClick={() => router.push('/apply')} className="shrink-0">
               + New Application
@@ -105,14 +105,14 @@ export default function DashboardPage() {
 
         {!isLoading && applications.length === 0 && !error && (
           <div className="text-center py-20 bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-100 dark:border-gray-700">
-            <div className="w-20 h-20 bg-[#0D4A2F]/10 rounded-full flex items-center justify-center mx-auto mb-5">
-              <svg className="w-10 h-10 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 bg-[#E8731A]/10 rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg className="w-10 h-10 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
             <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">No applications yet</h3>
             <p className="text-gray-500 dark:text-gray-400 mb-8 text-sm max-w-xs mx-auto">
-              Start your child's admissions journey to Greenwood International School by creating your first application.
+              Start your child's admissions journey to Excella International School by creating your first application.
             </p>
             <Button onClick={() => router.push('/apply')}>Start Your First Application</Button>
           </div>
@@ -128,7 +128,7 @@ export default function DashboardPage() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#0D4A2F]/10 dark:bg-[#0D4A2F]/30 rounded-xl flex items-center justify-center shrink-0 text-xl">
+                    <div className="w-12 h-12 bg-[#E8731A]/10 dark:bg-[#E8731A]/30 rounded-xl flex items-center justify-center shrink-0 text-xl">
                       🎒
                     </div>
                     <div>

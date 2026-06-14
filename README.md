@@ -1,6 +1,6 @@
-# Greenwood International School — Admissions Portal
+# Excella International School — Admissions Portal
 
-A full-stack digital admissions and enrollment system built for **Greenwood International School**, Kigali, Rwanda. The platform digitises the entire admissions lifecycle — from public programme browsing and multi-step online applications through to document management, staff review workflows, interview scheduling, and final enrolment.
+A full-stack digital admissions and enrollment system built for **Excella International School**, Kigali, Rwanda. The platform digitises the entire admissions lifecycle — from public programme browsing and multi-step online applications through to document management, staff review workflows, interview scheduling, and final enrolment.
 
 ---
 
@@ -26,7 +26,7 @@ A full-stack digital admissions and enrollment system built for **Greenwood Inte
 
 ### Public Portal
 - Landing page with school branding, programme overview, and admissions journey guide
-- Full Cambridge programme catalogue (Early Years → A-Level) with per-level detail cards
+- Full programme catalogue (Nursery → Senior 6) with per-level detail cards (Montessori & National Curriculum)
 - Tuition & Fees, FAQ, and Contact pages
 
 ### Parent / Applicant Portal
@@ -73,7 +73,7 @@ mvn spring-boot:run
 ```
 API runs at `http://localhost:8081/api/v1`.
 
-On first run the system auto-seeds: **Greenwood International School**, all Cambridge academic programmes (Nursery → A-Level), and default staff/admin test accounts.
+On first run the system auto-seeds: **Excella International School**, all Cambridge academic programmes (Nursery → A-Level), and default staff/admin test accounts.
 
 ### 3. Frontend
 ```bash

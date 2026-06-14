@@ -14,9 +14,9 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const base = 'inline-flex items-center justify-center font-semibold py-2 px-4 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 text-sm';
   const variants = {
-    primary: 'bg-[#0D4A2F] hover:bg-[#155D38] text-white focus:ring-[#0D4A2F]',
-    secondary: 'bg-white dark:bg-gray-800 border border-[#0D4A2F] text-[#0D4A2F] dark:text-green-400 dark:border-green-600 hover:bg-[#0D4A2F]/5 dark:hover:bg-green-900/20 focus:ring-[#0D4A2F]',
-    gold: 'bg-[#C9A227] hover:bg-[#E8C85A] text-[#082D1D] font-bold focus:ring-[#C9A227]',
+    primary: 'bg-[#E8731A] hover:bg-[#155D38] text-white focus:ring-[#E8731A]',
+    secondary: 'bg-white dark:bg-gray-800 border border-[#E8731A] text-[#E8731A] dark:text-green-400 dark:border-green-600 hover:bg-[#E8731A]/5 dark:hover:bg-green-900/20 focus:ring-[#E8731A]',
+    gold: 'bg-[#4DB8E8] hover:bg-[#7DCEF4] text-[#1A1A1A] font-bold focus:ring-[#4DB8E8]',
   };
 
   return (

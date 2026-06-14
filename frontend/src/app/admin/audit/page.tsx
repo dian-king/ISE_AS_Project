@@ -91,7 +91,7 @@ export default function AuditPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <Link href="/admin/dashboard" className="text-[#0D4A2F] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
+          <Link href="/admin/dashboard" className="text-[#E8731A] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -134,8 +134,8 @@ export default function AuditPage() {
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-24 bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-100 dark:border-gray-700">
-            <div className="w-16 h-16 rounded-full bg-[#0D4A2F]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-16 h-16 rounded-full bg-[#E8731A]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>
@@ -192,7 +192,7 @@ export default function AuditPage() {
                             <td className="px-5 py-3 text-gray-500 dark:text-gray-400 text-xs max-w-xs">
                               <span className="line-clamp-2">{log.details ?? '—'}</span>
                               {hasExtra && (
-                                <span className={`inline-flex items-center gap-0.5 text-[#0D4A2F] dark:text-green-400 text-[10px] font-semibold mt-0.5`}>
+                                <span className={`inline-flex items-center gap-0.5 text-[#E8731A] dark:text-green-400 text-[10px] font-semibold mt-0.5`}>
                                   {isExpanded ? '▲ hide diff' : '▼ show diff'}
                                 </span>
                               )}

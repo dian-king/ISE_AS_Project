@@ -42,8 +42,8 @@ export default function RegisterPage() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F8F5EE] dark:bg-[#080f0a] px-4">
         <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-10 text-center">
-          <div className="w-16 h-16 bg-[#0D4A2F]/10 rounded-full flex items-center justify-center mx-auto mb-5">
-            <svg className="w-8 h-8 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-16 h-16 bg-[#E8731A]/10 rounded-full flex items-center justify-center mx-auto mb-5">
+            <svg className="w-8 h-8 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
@@ -51,7 +51,7 @@ export default function RegisterPage() {
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
             We sent a verification link to
           </p>
-          <p className="font-semibold text-[#0D4A2F] dark:text-green-400 mb-4">{formData.email}</p>
+          <p className="font-semibold text-[#E8731A] dark:text-green-400 mb-4">{formData.email}</p>
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
             Click the link in that email to verify your account before continuing.
           </p>
@@ -60,7 +60,7 @@ export default function RegisterPage() {
           </p>
           <button
             onClick={() => router.push('/dashboard')}
-            className="w-full bg-[#0D4A2F] hover:bg-[#155D38] text-white font-bold py-3 rounded-xl transition-colors text-sm"
+            className="w-full bg-[#E8731A] hover:bg-[#155D38] text-white font-bold py-3 rounded-xl transition-colors text-sm"
           >
             Continue to Dashboard →
           </button>
@@ -79,30 +79,30 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel — branding */}
-      <div className="hidden lg:flex lg:w-5/12 xl:w-[45%] bg-[#0D4A2F] flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-5/12 xl:w-[45%] bg-[#E8731A] flex-col justify-between p-12 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute top-0 right-0 w-72 h-72 opacity-10" viewBox="0 0 300 300" fill="none">
-            <circle cx="250" cy="50" r="200" stroke="#C9A227" strokeWidth="1.5" />
-            <circle cx="250" cy="50" r="130" stroke="#C9A227" strokeWidth="1" />
+            <circle cx="250" cy="50" r="200" stroke="#4DB8E8" strokeWidth="1.5" />
+            <circle cx="250" cy="50" r="130" stroke="#4DB8E8" strokeWidth="1" />
           </svg>
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#C9A227] opacity-5 translate-y-1/2 -translate-x-1/2 blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#4DB8E8] opacity-5 translate-y-1/2 -translate-x-1/2 blur-3xl" />
         </div>
 
         <Link href="/" className="flex items-center gap-3 relative z-10">
           <SchoolCrest className="h-10 w-9" />
           <div className="leading-tight">
-            <div className="text-white font-bold text-sm tracking-wider uppercase">Greenwood</div>
-            <div className="text-[#C9A227] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
+            <div className="text-white font-bold text-sm tracking-wider uppercase">Excella</div>
+            <div className="text-[#4DB8E8] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
           </div>
         </Link>
 
         <div className="relative z-10 space-y-6">
           <h2 className="font-display text-3xl font-bold text-white leading-tight">
             Begin Your Child's<br />
-            <span className="text-[#C9A227] italic">Academic Journey</span>
+            <span className="text-[#4DB8E8] italic">Academic Journey</span>
           </h2>
           <p className="text-green-200 text-sm leading-relaxed max-w-sm">
-            Join hundreds of families who have trusted Greenwood International School to provide a world-class Cambridge education for their children.
+            Join hundreds of families who have trusted Excella International School to provide a holistic Montessori and National Curriculum education for their children.
           </p>
           <div className="space-y-3">
             {[
@@ -112,8 +112,8 @@ export default function RegisterPage() {
               'Dedicated admissions team support',
             ].map((item) => (
               <div key={item} className="flex items-center gap-3 text-green-200 text-sm">
-                <div className="w-5 h-5 rounded-full bg-[#C9A227]/20 flex items-center justify-center shrink-0">
-                  <svg className="w-3 h-3 text-[#C9A227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-5 h-5 rounded-full bg-[#4DB8E8]/20 flex items-center justify-center shrink-0">
+                  <svg className="w-3 h-3 text-[#4DB8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -124,7 +124,7 @@ export default function RegisterPage() {
         </div>
 
         <p className="text-green-500 text-xs relative z-10">
-          Kigali, Rwanda &middot; Cambridge Accredited &middot; Founded 2009
+          Kigali, Rwanda &middot; AMS Montessori &middot; Kimironko, Gasabo
         </p>
       </div>
 
@@ -133,7 +133,7 @@ export default function RegisterPage() {
         <div className="flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-2 lg:hidden">
             <SchoolCrest className="h-8 w-7" />
-            <span className="text-[#0D4A2F] dark:text-green-400 font-bold text-sm">Greenwood</span>
+            <span className="text-[#E8731A] dark:text-green-400 font-bold text-sm">Excella</span>
           </Link>
           <div className="ml-auto">
             <ThemeToggle />
@@ -146,7 +146,7 @@ export default function RegisterPage() {
               <h1 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-2">Create your account</h1>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
                 Already have an account?{' '}
-                <Link href="/login" className="text-[#0D4A2F] dark:text-green-400 font-medium hover:underline">
+                <Link href="/login" className="text-[#E8731A] dark:text-green-400 font-medium hover:underline">
                   Sign in here
                 </Link>
               </p>
@@ -173,7 +173,7 @@ export default function RegisterPage() {
                       placeholder={placeholder}
                       value={formData[name]}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0D4A2F] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#E8731A] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
                     />
                   </div>
                 ))}
@@ -188,7 +188,7 @@ export default function RegisterPage() {
                     placeholder={placeholder}
                     value={formData[name]}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0D4A2F] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#E8731A] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
                   />
                 </div>
               ))}
@@ -206,7 +206,7 @@ export default function RegisterPage() {
 
             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
               <Link href="/" className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-                ← Back to Greenwood homepage
+                ← Back to Excella homepage
               </Link>
             </div>
           </div>

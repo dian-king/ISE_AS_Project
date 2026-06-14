@@ -30,7 +30,7 @@ const STATUS_COLORS: Record<string, string> = {
   INTERVIEW_COMPLETED: 'bg-violet-500', COMMITTEE_REVIEW: 'bg-fuchsia-500',
   ACCEPTED: 'bg-green-500', WAITLISTED: 'bg-amber-500', REJECTED: 'bg-red-500',
   OFFER_ACCEPTED: 'bg-emerald-500', OFFER_DECLINED: 'bg-rose-500',
-  ENROLLMENT_PENDING: 'bg-teal-500', ENROLLED: 'bg-[#0D4A2F]',
+  ENROLLMENT_PENDING: 'bg-teal-500', ENROLLED: 'bg-[#E8731A]',
 };
 
 function pct(n: number) { return `${(n * 100).toFixed(1)}%`; }
@@ -77,7 +77,7 @@ export default function ReportsPage() {
 
         {/* Header */}
         <div className="mb-8">
-          <Link href="/admin/dashboard" className="text-[#0D4A2F] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
+          <Link href="/admin/dashboard" className="text-[#E8731A] dark:text-green-400 hover:underline text-sm flex items-center gap-1 mb-3">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -101,7 +101,7 @@ export default function ReportsPage() {
         {admissions && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             {[
-              { label: 'Total Applications', value: admissions.totalApplications, color: 'text-[#0D4A2F] dark:text-green-400', border: 'border-l-[#0D4A2F]' },
+              { label: 'Total Applications', value: admissions.totalApplications, color: 'text-[#E8731A] dark:text-green-400', border: 'border-l-[#E8731A]' },
               { label: 'Accepted', value: admissions.accepted, color: 'text-emerald-600 dark:text-emerald-400', border: 'border-l-emerald-500' },
               { label: 'Acceptance Rate', value: pct(admissions.acceptanceRate), color: 'text-amber-600 dark:text-amber-400', border: 'border-l-amber-500' },
               { label: 'Yield Rate', value: pct(admissions.yieldRate), color: 'text-violet-600 dark:text-violet-400', border: 'border-l-violet-500' },
@@ -181,7 +181,7 @@ export default function ReportsPage() {
                     </div>
                     <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
                       <div
-                        className="h-2 rounded-full bg-[#0D4A2F]"
+                        className="h-2 rounded-full bg-[#E8731A]"
                         style={{ width: `${Math.min(g.fillRate * 100, 100)}%` }}
                       />
                     </div>
@@ -207,7 +207,7 @@ export default function ReportsPage() {
                 { label: 'Enrolled', value: conversion.enrolled, sub: pct(conversion.overallConversionRate) + ' overall yield' },
               ].map(({ label, value, sub }) => (
                 <div key={label} className="text-center p-4 bg-[#F8F5EE] dark:bg-gray-900/40 rounded-xl">
-                  <div className="font-display text-2xl font-bold text-[#0D4A2F] dark:text-green-400">{value}</div>
+                  <div className="font-display text-2xl font-bold text-[#E8731A] dark:text-green-400">{value}</div>
                   <div className="text-xs font-semibold text-gray-700 dark:text-gray-300 mt-1">{label}</div>
                   {sub && <div className="text-[10px] text-gray-400 dark:text-gray-500 mt-0.5">{sub}</div>}
                 </div>

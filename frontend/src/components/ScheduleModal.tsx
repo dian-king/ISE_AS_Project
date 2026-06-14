@@ -46,7 +46,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ applicationId, app
     }
   };
 
-  const inputClass = 'w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0D4A2F] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400';
+  const inputClass = 'w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#E8731A] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400';
 
   return (
     <div
@@ -57,16 +57,16 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ applicationId, app
       <div className="w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
 
         {/* Header */}
-        <div className="bg-[#0D4A2F] px-6 py-5 relative overflow-hidden">
+        <div className="bg-[#E8731A] px-6 py-5 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
             <svg viewBox="0 0 200 200" className="w-40 h-40" fill="none">
-              <circle cx="160" cy="40" r="100" stroke="#C9A227" strokeWidth="1" />
-              <circle cx="160" cy="40" r="60" stroke="#C9A227" strokeWidth="0.8" />
+              <circle cx="160" cy="40" r="100" stroke="#4DB8E8" strokeWidth="1" />
+              <circle cx="160" cy="40" r="60" stroke="#4DB8E8" strokeWidth="0.8" />
             </svg>
           </div>
           <div className="flex items-start justify-between relative z-10">
             <div>
-              <p className="text-[#C9A227] text-[10px] font-semibold tracking-[0.2em] uppercase mb-1">Admissions — Interview</p>
+              <p className="text-[#4DB8E8] text-[10px] font-semibold tracking-[0.2em] uppercase mb-1">Admissions — Interview</p>
               <h2 className="font-display text-xl font-bold text-white leading-tight">Schedule Interview</h2>
               <p className="text-green-200 text-sm mt-1 truncate max-w-[260px]">{applicantName}</p>
             </div>
@@ -87,7 +87,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ applicationId, app
           {success ? (
             <div className="py-6 text-center">
               <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-7 h-7 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-7 h-7 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -156,7 +156,7 @@ export const ScheduleModal: React.FC<ScheduleModalProps> = ({ applicationId, app
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 py-3 px-4 rounded-xl bg-[#C9A227] hover:bg-[#E8C85A] text-[#082D1D] text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 px-4 rounded-xl bg-[#4DB8E8] hover:bg-[#7DCEF4] text-[#1A1A1A] text-sm font-bold transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>

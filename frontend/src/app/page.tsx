@@ -16,9 +16,9 @@ const NAV_LINKS = [
 
 const STATS = [
   { value: '500+', label: 'Enrolled Students' },
-  { value: '5', label: 'Cambridge Programmes' },
-  { value: '98%', label: 'University Placement' },
-  { value: '20+', label: 'Nationalities' },
+  { value: '5', label: 'Education Programmes' },
+  { value: 'AMS', label: 'Montessori Accredited' },
+  { value: '2+', label: 'Curriculum Pathways' },
 ];
 
 const PILLARS = [
@@ -28,8 +28,8 @@ const PILLARS = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
       </svg>
     ),
-    title: 'Academic Excellence',
-    desc: 'Our Cambridge curriculum challenges students to think critically, communicate effectively, and develop a genuine love for learning across all disciplines.',
+    title: 'Montessori Excellence',
+    desc: 'Our AMS-registered Montessori programme challenges students to think independently, explore with curiosity, and develop a genuine love for learning across all stages.',
   },
   {
     icon: (
@@ -37,8 +37,8 @@ const PILLARS = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
       </svg>
     ),
-    title: 'Global Perspective',
-    desc: 'With students from over 20 nationalities, Greenwood is a truly diverse community that prepares young people to thrive in an interconnected world.',
+    title: 'Holistic Learning',
+    desc: 'We blend the Rwanda National Curriculum with Montessori principles, nurturing the whole child — academically, socially, and emotionally — from Nursery to Senior 6.',
   },
   {
     icon: (
@@ -46,17 +46,17 @@ const PILLARS = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: 'Character Development',
-    desc: 'Beyond academics, we nurture empathy, resilience, leadership, and integrity — the qualities that define exceptional human beings and responsible citizens.',
+    title: 'Character & Independence',
+    desc: 'We foster self-esteem, integrity, life skills, and mentorship — empowering every student to become a confident, independent adult and positive changemaker.',
   },
 ];
 
 const PROGRAMMES_PREVIEW = [
-  { level: 'Early Years', grades: 'Nursery – Grade 2', ages: '3–7', gradient: 'from-amber-400 to-orange-500', emoji: '🌱' },
-  { level: 'Primary', grades: 'Grade 3 – 6', ages: '7–11', gradient: 'from-sky-400 to-blue-600', emoji: '📚' },
-  { level: 'Lower Secondary', grades: 'Grade 7 – 9', ages: '11–14', gradient: 'from-violet-500 to-purple-700', emoji: '🔬' },
-  { level: 'IGCSE', grades: 'Grade 10 – 11', ages: '14–16', gradient: 'from-emerald-400 to-green-700', emoji: '🎓' },
-  { level: 'A-Level', grades: 'Grade 12 – 13', ages: '16–18', gradient: 'from-rose-400 to-red-700', emoji: '🏆' },
+  { level: 'Nursery', grades: 'Baby Class – Nursery 3', ages: '2–6', gradient: 'from-amber-400 to-orange-500', emoji: '🌱' },
+  { level: 'Primary', grades: 'P1 – P6', ages: '6–13', gradient: 'from-sky-400 to-blue-600', emoji: '📚' },
+  { level: 'Junior Secondary', grades: 'S1 – S3', ages: '13–16', gradient: 'from-violet-500 to-purple-700', emoji: '🔬' },
+  { level: 'Senior Secondary I', grades: 'S4 – S5', ages: '16–18', gradient: 'from-emerald-400 to-green-700', emoji: '🎓' },
+  { level: 'Senior Secondary II', grades: 'S5 – S6', ages: '17–19', gradient: 'from-rose-400 to-red-700', emoji: '🏆' },
 ];
 
 const STEPS = [
@@ -99,17 +99,17 @@ export default function Home() {
     <div className="min-h-screen bg-[#F8F5EE] dark:bg-[#080f0a] transition-colors">
 
       {/* ── Navigation ── */}
-      <nav className="bg-[#0D4A2F] sticky top-0 z-30 shadow-lg">
+      <nav className="bg-[#E8731A] sticky top-0 z-30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-[68px]">
             <Link href="/" className="flex items-center gap-3 shrink-0">
               <SchoolCrest className="h-10 w-9" />
               <div className="hidden sm:block leading-tight">
-                <div className="text-white font-bold text-sm tracking-wider uppercase">Greenwood</div>
-                <div className="text-[#C9A227] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
+                <div className="text-white font-bold text-sm tracking-wider uppercase">Excella</div>
+                <div className="text-[#4DB8E8] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
               </div>
             </Link>
-            <div className="hidden md:flex items-center gap-7 text-sm font-medium text-green-200">
+            <div className="hidden md:flex items-center gap-7 text-sm font-medium text-orange-200">
               {NAV_LINKS.map(({ href, label }) => (
                 <Link key={href} href={href} className="hover:text-white transition-colors">{label}</Link>
               ))}
@@ -118,7 +118,7 @@ export default function Home() {
               <ThemeToggle />
               <Link
                 href="/login"
-                className="hidden sm:inline-block text-sm font-bold bg-[#C9A227] text-[#082D1D] px-5 py-2 rounded-lg hover:bg-[#E8C85A] transition-colors"
+                className="hidden sm:inline-block text-sm font-bold bg-[#4DB8E8] text-[#1A1A1A] px-5 py-2 rounded-lg hover:bg-[#7DCEF4] transition-colors"
               >
                 Sign In
               </Link>
@@ -128,42 +128,42 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-[#0D4A2F] min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden bg-[#E8731A] min-h-[90vh] flex items-center">
         {/* Decorative background elements */}
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute right-0 top-0 w-1/2 h-full opacity-[0.07]" viewBox="0 0 500 700" fill="none">
-            <circle cx="400" cy="150" r="250" stroke="#C9A227" strokeWidth="1.5" />
-            <circle cx="400" cy="150" r="180" stroke="#C9A227" strokeWidth="1" />
-            <circle cx="400" cy="150" r="110" stroke="#C9A227" strokeWidth="0.8" />
-            <line x1="0" y1="350" x2="500" y2="350" stroke="#C9A227" strokeWidth="0.5" />
-            <line x1="250" y1="0" x2="250" y2="700" stroke="#C9A227" strokeWidth="0.5" />
-            <path d="M0 550 Q250 400 500 550" stroke="#C9A227" strokeWidth="0.8" fill="none" />
+            <circle cx="400" cy="150" r="250" stroke="#4DB8E8" strokeWidth="1.5" />
+            <circle cx="400" cy="150" r="180" stroke="#4DB8E8" strokeWidth="1" />
+            <circle cx="400" cy="150" r="110" stroke="#4DB8E8" strokeWidth="0.8" />
+            <line x1="0" y1="350" x2="500" y2="350" stroke="#4DB8E8" strokeWidth="0.5" />
+            <line x1="250" y1="0" x2="250" y2="700" stroke="#4DB8E8" strokeWidth="0.5" />
+            <path d="M0 550 Q250 400 500 550" stroke="#4DB8E8" strokeWidth="0.8" fill="none" />
           </svg>
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#C9A227] opacity-5 blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#4DB8E8] opacity-5 blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-[#C9A227] text-[11px] font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-8">
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-[#4DB8E8] text-[11px] font-semibold tracking-[0.18em] uppercase px-4 py-2 rounded-full mb-8">
                 <svg className="w-3 h-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                Cambridge Accredited · Kigali, Rwanda
+  AMS Montessori · Kigali, Rwanda
               </div>
               <h1 className="font-display text-5xl sm:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
-                Shaping<br />
-                Tomorrow's<br />
-                <span className="text-[#C9A227] italic">Leaders</span>
+                In Pursuit<br />
+                of a Balanced<br />
+                <span className="text-[#4DB8E8] italic">Education</span>
               </h1>
-              <p className="text-green-200 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
-                A world-class Cambridge education nurturing intellectual curiosity, character, and global citizenship — right here in the heart of Africa.
+              <p className="text-orange-200 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
+                A Montessori and Rwanda National Curriculum school nurturing independent thinkers, creative changemakers, and well-rounded individuals — in the heart of Kigali.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/register"
-                  className="inline-flex items-center justify-center gap-2 bg-[#C9A227] hover:bg-[#E8C85A] text-[#082D1D] font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-[#4DB8E8] hover:bg-[#7DCEF4] text-[#1A1A1A] font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm"
                 >
                   Begin Your Application
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -188,8 +188,8 @@ export default function Home() {
                     key={label}
                     className="bg-white/10 border border-white/20 rounded-xl p-4 text-center backdrop-blur-sm"
                   >
-                    <div className="font-display text-[#C9A227] font-bold text-2xl">{value}</div>
-                    <div className="text-green-300 text-xs mt-0.5 font-medium">{label}</div>
+                    <div className="font-display text-[#4DB8E8] font-bold text-2xl">{value}</div>
+                    <div className="text-orange-300 text-xs mt-0.5 font-medium">{label}</div>
                   </div>
                 ))}
               </div>
@@ -209,23 +209,23 @@ export default function Home() {
       </section>
 
       {/* ── Mobile Stats Strip ── */}
-      <div className="lg:hidden bg-[#082D1D]">
+      <div className="lg:hidden bg-[#1A1A1A]">
         <div className="max-w-xl mx-auto px-4 py-6 grid grid-cols-2 gap-4">
           {STATS.map(({ value, label }) => (
             <div key={label} className="text-center">
-              <div className="font-display text-[#C9A227] font-bold text-2xl">{value}</div>
-              <div className="text-green-400 text-xs font-medium mt-0.5">{label}</div>
+              <div className="font-display text-[#4DB8E8] font-bold text-2xl">{value}</div>
+              <div className="text-orange-400 text-xs font-medium mt-0.5">{label}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── Why Greenwood ── */}
+      {/* ── Why Excella ── */}
       <section className="max-w-7xl mx-auto py-24 px-4 sm:px-6">
         <div className="text-center mb-14">
-          <p className="text-[#C9A227] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Why Choose Us</p>
-          <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white">An Education Built for the Future</h2>
-          <div className="w-16 h-1 bg-[#C9A227] mx-auto mt-5 rounded-full" />
+          <p className="text-[#4DB8E8] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Why Choose Us</p>
+          <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white">An Education Built for the Whole Child</h2>
+          <div className="w-16 h-1 bg-[#4DB8E8] mx-auto mt-5 rounded-full" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PILLARS.map(({ icon, title, desc }) => (
@@ -233,7 +233,7 @@ export default function Home() {
               key={title}
               className="bg-white dark:bg-gray-800/60 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:-translate-y-1 transition-all group"
             >
-              <div className="w-14 h-14 bg-[#0D4A2F]/10 dark:bg-[#0D4A2F]/30 rounded-xl flex items-center justify-center text-[#0D4A2F] dark:text-green-400 mb-5 group-hover:bg-[#0D4A2F] group-hover:text-white transition-all">
+              <div className="w-14 h-14 bg-[#E8731A]/10 dark:bg-[#E8731A]/30 rounded-xl flex items-center justify-center text-[#E8731A] dark:text-orange-400 mb-5 group-hover:bg-[#E8731A] group-hover:text-white transition-all">
                 {icon}
               </div>
               <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
@@ -248,12 +248,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
             <div>
-              <p className="text-[#C9A227] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Academic Pathways</p>
+              <p className="text-[#4DB8E8] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Academic Pathways</p>
               <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white">Our Programmes</h2>
             </div>
             <Link
               href="/programs"
-              className="inline-flex items-center gap-1.5 text-[#0D4A2F] dark:text-green-400 font-semibold text-sm hover:gap-3 transition-all group"
+              className="inline-flex items-center gap-1.5 text-[#E8731A] dark:text-orange-400 font-semibold text-sm hover:gap-3 transition-all group"
             >
               View full catalogue
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,21 +290,21 @@ export default function Home() {
       {/* ── Admissions Journey ── */}
       <section className="max-w-7xl mx-auto py-24 px-4 sm:px-6">
         <div className="text-center mb-14">
-          <p className="text-[#C9A227] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Getting Started</p>
+          <p className="text-[#4DB8E8] font-semibold text-xs tracking-[0.2em] uppercase mb-3">Getting Started</p>
           <h2 className="font-display text-4xl font-bold text-gray-900 dark:text-white">The Admissions Journey</h2>
           <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-lg mx-auto text-sm">
             A transparent, supportive process designed to guide every family with confidence from first enquiry to first day of school.
           </p>
-          <div className="w-16 h-1 bg-[#C9A227] mx-auto mt-5 rounded-full" />
+          <div className="w-16 h-1 bg-[#4DB8E8] mx-auto mt-5 rounded-full" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {STEPS.map(({ step, title, desc, emoji }) => (
             <div
               key={step}
-              className="bg-white dark:bg-gray-800/60 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-[#C9A227]/30 transition-all text-center group"
+              className="bg-white dark:bg-gray-800/60 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-[#4DB8E8]/30 transition-all text-center group"
             >
               <div className="text-3xl mb-3">{emoji}</div>
-              <div className="text-[#C9A227] font-bold text-[10px] tracking-[0.15em] uppercase mb-2">Step {step}</div>
+              <div className="text-[#4DB8E8] font-bold text-[10px] tracking-[0.15em] uppercase mb-2">Step {step}</div>
               <h3 className="font-display font-bold text-gray-900 dark:text-white text-sm mb-2 leading-snug">{title}</h3>
               <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{desc}</p>
             </div>
@@ -313,7 +313,7 @@ export default function Home() {
         <div className="mt-10 text-center">
           <Link
             href="/register"
-            className="inline-flex items-center gap-2 bg-[#0D4A2F] hover:bg-[#155D38] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm"
+            className="inline-flex items-center gap-2 bg-[#E8731A] hover:bg-[#C55E0E] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 text-sm"
           >
             Start Your Application Now
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -324,28 +324,28 @@ export default function Home() {
       </section>
 
       {/* ── Portal Access ── */}
-      <section className="bg-[#0D4A2F] py-24">
+      <section className="bg-[#E8731A] py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl font-bold text-white mb-3">Access Your Portal</h2>
-            <p className="text-green-200 text-sm">Choose your portal to begin or manage your admissions journey.</p>
+            <p className="text-orange-200 text-sm">Choose your portal to begin or manage your admissions journey.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Parent Portal */}
             <div className="bg-white/10 border border-white/20 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/[0.15] transition-all group">
-              <div className="w-14 h-14 bg-[#C9A227]/20 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#C9A227]/30 transition-all">
-                <svg className="w-7 h-7 text-[#C9A227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-14 h-14 bg-[#4DB8E8]/20 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#4DB8E8]/30 transition-all">
+                <svg className="w-7 h-7 text-[#4DB8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-2">Parent Portal</h3>
-              <p className="text-green-200 text-sm mb-6 leading-relaxed">
+              <p className="text-orange-200 text-sm mb-6 leading-relaxed">
                 Apply for admission, upload supporting documents, track your application status in real time, and accept your offer of enrolment.
               </p>
               <button
                 onClick={() => handlePortalAccess('student')}
                 disabled={!!isLoading}
-                className="w-full bg-[#C9A227] hover:bg-[#E8C85A] text-[#082D1D] font-bold py-3.5 px-6 rounded-xl transition-all disabled:opacity-60 text-sm"
+                className="w-full bg-[#4DB8E8] hover:bg-[#7DCEF4] text-[#1A1A1A] font-bold py-3.5 px-6 rounded-xl transition-all disabled:opacity-60 text-sm"
               >
                 {isLoading === 'student' ? 'Connecting...' : 'Enter Parent Portal →'}
               </button>
@@ -359,7 +359,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-2">Staff Portal</h3>
-              <p className="text-green-200 text-sm mb-6 leading-relaxed">
+              <p className="text-orange-200 text-sm mb-6 leading-relaxed">
                 Process applications, verify documents, conduct academic reviews, schedule interviews, and manage the end-to-end admissions pipeline.
               </p>
               <button
@@ -375,27 +375,27 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="bg-[#082D1D] text-white py-12 px-4">
+      <footer className="bg-[#1A1A1A] text-white py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-white/10">
             <div className="flex items-center gap-4">
               <SchoolCrest className="h-14 w-12" />
               <div>
-                <div className="font-bold text-base tracking-wider uppercase">Greenwood</div>
-                <div className="text-[#C9A227] text-[10px] tracking-[0.22em] uppercase font-medium">International School</div>
-                <div className="text-green-500 text-xs mt-1">Kigali, Rwanda</div>
+                <div className="font-bold text-base tracking-wider uppercase">Excella</div>
+                <div className="text-[#4DB8E8] text-[10px] tracking-[0.22em] uppercase font-medium">International School</div>
+                <div className="text-orange-500 text-xs mt-1">Kigali, Rwanda</div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-green-300">
+            <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-orange-300">
               {NAV_LINKS.map(({ href, label }) => (
                 <Link key={href} href={href} className="hover:text-white transition-colors">{label}</Link>
               ))}
               <Link href="/login" className="hover:text-white transition-colors">Sign In</Link>
-              <Link href="/register" className="hover:text-white transition-colors text-[#C9A227] hover:text-[#E8C85A]">Apply Now</Link>
+              <Link href="/register" className="hover:text-white transition-colors text-[#4DB8E8] hover:text-[#7DCEF4]">Apply Now</Link>
             </div>
           </div>
-          <div className="pt-6 text-center text-green-600 text-xs">
-            © {new Date().getFullYear()} Greenwood International School. All rights reserved.
+          <div className="pt-6 text-center text-orange-600 text-xs">
+            © {new Date().getFullYear()} Excella International School. All rights reserved.
           </div>
         </div>
       </footer>

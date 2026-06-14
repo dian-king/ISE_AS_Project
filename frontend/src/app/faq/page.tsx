@@ -10,7 +10,7 @@ const FAQ_ITEMS = [
     questions: [
       {
         q: 'How do I apply for admission?',
-        a: 'Applications are completed entirely online through the Greenwood International School Parent Portal. Click "Apply Now" on the home page to create a parent account and begin your application. The process is straightforward and typically takes 20–30 minutes to complete.',
+        a: 'Applications are completed entirely online through the Excella International School Admissions Portal. Click "Apply Now" on the home page to create a parent account and begin your application. The process is straightforward and typically takes 20–30 minutes to complete.',
       },
       {
         q: 'What is the deadline for applications?',
@@ -77,7 +77,7 @@ const FAQ_ITEMS = [
     questions: [
       {
         q: 'What curriculum does the school follow?',
-        a: 'Greenwood International School follows the Cambridge International Curriculum from Early Years through A-Level. Cambridge qualifications are recognised by leading universities and employers around the world.',
+        a: 'Excella International School follows two educational pathways: the Rwanda National Curriculum and the American Montessori Program (registered under the American Montessori Society). Nursery and Primary levels are Montessori-based; Secondary offers both National Curriculum and Montessori-informed learning.',
       },
       {
         q: 'What languages are taught at the school?',
@@ -103,9 +103,9 @@ function FAQAccordion({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full text-left py-4 flex items-center justify-between gap-4 group"
       >
-        <span className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-[#0D4A2F] dark:group-hover:text-green-400 transition-colors">{q}</span>
+        <span className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-[#E8731A] dark:group-hover:text-green-400 transition-colors">{q}</span>
         <svg
-          className={`w-5 h-5 text-[#0D4A2F] dark:text-green-400 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-[#E8731A] dark:text-green-400 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -126,11 +126,11 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#F8F5EE] dark:bg-[#080f0a] transition-colors">
       {/* Nav */}
-      <nav className="bg-[#0D4A2F] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-md">
-        <Link href="/" className="font-display font-bold text-lg tracking-tight hover:text-green-200 transition-colors">
-          Greenwood
+      <nav className="bg-[#E8731A] text-white px-6 py-3 flex items-center justify-between sticky top-0 z-20 shadow-md">
+        <Link href="/" className="font-display font-bold text-lg tracking-tight hover:text-orange-200 transition-colors">
+          Excella
         </Link>
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-green-200">
+        <div className="hidden md:flex items-center space-x-6 text-sm font-medium text-orange-200">
           <Link href="/programs" className="hover:text-white transition-colors">Programmes</Link>
           <Link href="/fees" className="hover:text-white transition-colors">Tuition & Fees</Link>
           <Link href="/faq" className="text-white font-semibold">FAQ</Link>
@@ -138,31 +138,31 @@ export default function FAQPage() {
         </div>
         <div className="flex items-center space-x-3">
           <ThemeToggle />
-          <Link href="/login" className="text-sm font-semibold bg-[#C9A227] text-[#082D1D] px-4 py-1.5 rounded-lg hover:bg-[#E8C85A] transition-colors">
+          <Link href="/login" className="text-sm font-semibold bg-[#4DB8E8] text-[#1A1A1A] px-4 py-1.5 rounded-lg hover:bg-[#7DCEF4] transition-colors">
             Sign In
           </Link>
         </div>
       </nav>
 
       {/* Hero */}
-      <div className="bg-[#0D4A2F] text-white py-16 px-4 text-center relative overflow-hidden">
+      <div className="bg-[#E8731A] text-white py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none select-none" aria-hidden>
           <div className="absolute -top-16 -left-16 w-72 h-72 rounded-full border-4 border-white" />
           <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full border-4 border-white" />
         </div>
-        <p className="text-[#C9A227] font-semibold text-sm uppercase tracking-widest mb-2">Greenwood International School</p>
+        <p className="text-[#4DB8E8] font-semibold text-sm uppercase tracking-widest mb-2">Excella International School</p>
         <h1 className="font-display text-4xl font-bold mb-3">Frequently Asked Questions</h1>
-        <p className="text-green-200 max-w-xl mx-auto">
+        <p className="text-orange-200 max-w-xl mx-auto">
           Answers to the most common questions from prospective families. Can't find what you're looking for?{' '}
-          <Link href="/contact" className="text-white underline hover:text-[#C9A227] transition-colors">Contact us directly.</Link>
+          <Link href="/contact" className="text-white underline hover:text-[#4DB8E8] transition-colors">Contact us directly.</Link>
         </p>
       </div>
 
       <div className="max-w-3xl mx-auto py-12 px-4">
         {FAQ_ITEMS.map((section) => (
           <div key={section.category} className="mb-8">
-            <h2 className="text-xs font-bold uppercase tracking-widest text-[#C9A227] mb-4 flex items-center gap-2">
-              <span className="w-4 h-px bg-[#C9A227]" />
+            <h2 className="text-xs font-bold uppercase tracking-widest text-[#4DB8E8] mb-4 flex items-center gap-2">
+              <span className="w-4 h-px bg-[#4DB8E8]" />
               {section.category}
             </h2>
             <div className="bg-white dark:bg-gray-800/60 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 px-6">
@@ -175,8 +175,8 @@ export default function FAQPage() {
 
         {/* CTA */}
         <div className="mt-8 text-center bg-white dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-sm p-8">
-          <div className="w-12 h-12 rounded-full bg-[#0D4A2F]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
-            <svg className="w-6 h-6 text-[#0D4A2F] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-12 h-12 rounded-full bg-[#E8731A]/10 dark:bg-green-900/20 flex items-center justify-center mx-auto mb-4">
+            <svg className="w-6 h-6 text-[#E8731A] dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
           </div>
@@ -184,7 +184,7 @@ export default function FAQPage() {
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-5">
             Our admissions team is happy to help. Reach out to us and we will respond within one business day.
           </p>
-          <Link href="/contact" className="bg-[#0D4A2F] text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-[#0a3d26] transition-colors inline-block">
+          <Link href="/contact" className="bg-[#E8731A] text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-[#0a3d26] transition-colors inline-block">
             Contact Admissions
           </Link>
         </div>

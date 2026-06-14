@@ -91,8 +91,7 @@ export default function ApplyPage() {
     const fetchSchool = async () => {
       try {
         setIsLoading(true);
-        // Try fetching by domain 'greenwood' which we initialized
-        const data = await apiFetch('/public/school/greenwood');
+        const data = await apiFetch('/public/school/excella');
         setSchool(data);
       } catch (err) {
         console.error('Failed to load school info:', err);

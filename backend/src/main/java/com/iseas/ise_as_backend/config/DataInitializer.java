@@ -37,11 +37,11 @@ public class DataInitializer implements CommandLineRunner {
         if (schoolRepository.count() == 0) {
             // 1. Create a Default School
             school = School.builder()
-                    .name("Greenwood International School")
-                    .domain("greenwood")
-                    .primaryColor("#059669") // Emerald 600
-                    .secondaryColor("#1e293b") // Slate 800
-                    .contactEmail("admissions@greenwood.edu")
+                    .name("Excella International School")
+                    .domain("excella")
+                    .primaryColor("#E8731A")
+                    .secondaryColor("#1A1A1A")
+                    .contactEmail("info@excellaschool.rw")
                     .build();
             school = schoolRepository.save(school);
 

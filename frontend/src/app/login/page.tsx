@@ -44,22 +44,22 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left panel — branding */}
-      <div className="hidden lg:flex lg:w-5/12 xl:w-[45%] bg-[#0D4A2F] flex-col justify-between p-12 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-5/12 xl:w-[45%] bg-[#E8731A] flex-col justify-between p-12 relative overflow-hidden">
         {/* Decorative background */}
         <div className="absolute inset-0 pointer-events-none">
           <svg className="absolute bottom-0 right-0 w-80 h-80 opacity-10" viewBox="0 0 300 300" fill="none">
-            <circle cx="250" cy="250" r="200" stroke="#C9A227" strokeWidth="1.5" />
-            <circle cx="250" cy="250" r="130" stroke="#C9A227" strokeWidth="1" />
-            <circle cx="250" cy="250" r="60" stroke="#C9A227" strokeWidth="0.8" />
+            <circle cx="250" cy="250" r="200" stroke="#4DB8E8" strokeWidth="1.5" />
+            <circle cx="250" cy="250" r="130" stroke="#4DB8E8" strokeWidth="1" />
+            <circle cx="250" cy="250" r="60" stroke="#4DB8E8" strokeWidth="0.8" />
           </svg>
-          <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#C9A227] opacity-5 -translate-x-1/2 -translate-y-1/2 blur-3xl" />
+          <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#4DB8E8] opacity-5 -translate-x-1/2 -translate-y-1/2 blur-3xl" />
         </div>
 
         <Link href="/" className="flex items-center gap-3 relative z-10">
           <SchoolCrest className="h-10 w-9" />
           <div className="leading-tight">
-            <div className="text-white font-bold text-sm tracking-wider uppercase">Greenwood</div>
-            <div className="text-[#C9A227] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
+            <div className="text-white font-bold text-sm tracking-wider uppercase">Excella</div>
+            <div className="text-[#4DB8E8] text-[10px] font-medium tracking-[0.22em] uppercase">International School</div>
           </div>
         </Link>
 
@@ -68,12 +68,12 @@ export default function LoginPage() {
           <blockquote className="text-green-100 text-lg font-display italic leading-relaxed mb-4">
             "Education is the most powerful weapon which you can use to change the world."
           </blockquote>
-          <cite className="text-[#C9A227] text-sm font-medium not-italic">— Nelson Mandela</cite>
+          <cite className="text-[#4DB8E8] text-sm font-medium not-italic">— Nelson Mandela</cite>
         </div>
 
         <div className="relative z-10">
           <p className="text-green-400 text-xs">
-            Kigali, Rwanda &middot; Cambridge Accredited &middot; Founded 2009
+            Kigali, Rwanda &middot; AMS Montessori &middot; Kimironko, Gasabo
           </p>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function LoginPage() {
         <div className="flex justify-between items-center px-6 py-4">
           <Link href="/" className="flex items-center gap-2 lg:hidden">
             <SchoolCrest className="h-8 w-7" />
-            <span className="text-[#0D4A2F] dark:text-green-400 font-bold text-sm">Greenwood</span>
+            <span className="text-[#E8731A] dark:text-green-400 font-bold text-sm">Excella</span>
           </Link>
           <div className="ml-auto">
             <ThemeToggle />
@@ -96,7 +96,7 @@ export default function LoginPage() {
               <h1 className="font-display text-3xl font-bold text-gray-900 dark:text-white mb-2">Welcome back</h1>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
                 Sign in to access your admissions portal.{' '}
-                <Link href="/register" className="text-[#0D4A2F] dark:text-green-400 font-medium hover:underline">
+                <Link href="/register" className="text-[#E8731A] dark:text-green-400 font-medium hover:underline">
                   Create an account
                 </Link>
               </p>
@@ -120,13 +120,13 @@ export default function LoginPage() {
                   onChange={e => setEmail(e.target.value)}
                   required
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0D4A2F] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#E8731A] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
                 />
               </div>
               <div>
                 <div className="flex items-center justify-between mb-1.5">
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
-                  <Link href="/forgot-password" className="text-xs text-[#0D4A2F] dark:text-green-400 hover:underline">
+                  <Link href="/forgot-password" className="text-xs text-[#E8731A] dark:text-green-400 hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -136,7 +136,7 @@ export default function LoginPage() {
                   onChange={e => setPassword(e.target.value)}
                   required
                   placeholder="Your password"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#0D4A2F] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#E8731A] dark:focus:ring-green-500 focus:border-transparent transition-all placeholder:text-gray-400"
                 />
               </div>
               <Button type="submit" className="w-full py-3 text-sm" isLoading={isLoading}>
@@ -146,7 +146,7 @@ export default function LoginPage() {
 
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
               <Link href="/" className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-                ← Back to Greenwood homepage
+                ← Back to Excella homepage
               </Link>
             </div>
           </div>
