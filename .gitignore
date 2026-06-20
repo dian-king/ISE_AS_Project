@@ -6,6 +6,9 @@ node_modules/
 .env.local
 .vscode/
 
+# Secrets
+backend/src/main/resources/application.properties
+
 # Backend (Java/Maven)
 backend/uploads/
 backend/target/
